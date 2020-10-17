@@ -53,3 +53,38 @@ var patientSchema = new Schema({
 },
     {timestamps: true}
 );
+
+
+
+patientSchema.virtual("password")
+    .set(function(password) {
+        this._password = password;
+        this.salt = uuidv4();
+        this.encry_password = this.securePassword(password);
+    })
+    .get(function() {
+        return this._password;
+    })
+
+
+patientSchema.methods = {
+    authenticate: function(plainpassword) {
+        return this.securePassword(plainpassword) === this.encry_password;
+    },
+
+    securePassword: function(plainpassword) {
+        if(!plainpassword) return "";
+        try {
+            returncrypto.createHmac('sha256', this.salt)
+            .update(plainpassword)
+            .digest('hex');
+        }
+        catch (err) {
+            return "";
+        }
+    }
+};
+
+
+
+module.exports = mongoose.model("Patient", patientSchema)
