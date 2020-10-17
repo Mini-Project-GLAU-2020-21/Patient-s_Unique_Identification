@@ -6,6 +6,19 @@ var Schema = mongoose.Schema;
 var patientSchema = new Schema({
     fname: {
         type: String,
-        required: true
-    }
+        required: true,
+        maxlength: 15,
+        trim: true
+    },
+    mname:{
+        type: String,
+        maxlength: 15,
+        trim: true
+    },
+    lname: {
+        type: String,
+        maxlength:15,
+        trim: true
+    },
+    
 });
