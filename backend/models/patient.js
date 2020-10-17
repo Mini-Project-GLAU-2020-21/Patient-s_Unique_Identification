@@ -1,6 +1,7 @@
 var mongoose = requiure("mangoose");
 const crypto = require("crypto");
 const uuidv4 = require("uuid/v4");
+var mongooseTypePhone = require("mongoose-type-phone");
 
 var Schema = mongoose.Schema;
 var patientSchema = new Schema({
@@ -26,6 +27,13 @@ var patientSchema = new Schema({
         unique: true
     },
     contact_number: {
-        type: 
-    }
+        type: mongoose.SchemaTypes.Phone,
+        required: 'Phone number should be set correctly',
+        allowBlank: false,
+        allowedNumberTypes: mongooseTypePhone.PhoneNumberType.MOBILE,
+        phoneNumberFormat: mongooseTypePhone.PhoneNumberFormat.INTERNATIONAL, // can be omitted to keep raw input
+        defaultRegion: 'IN',
+        parseOnGet: false
+    },
+    
 });
