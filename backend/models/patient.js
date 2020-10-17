@@ -26,6 +26,11 @@ var patientSchema = new Schema({
         trim:true,
         unique: true
     },
+    dob: {
+        type: Date,
+        required: true,
+        max: Date.now 
+    },
     contact_number: {
         type: mongoose.SchemaTypes.Phone,
         required: 'Phone number should be set correctly',
