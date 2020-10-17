@@ -40,5 +40,16 @@ var patientSchema = new Schema({
         defaultRegion: 'IN',
         parseOnGet: false
     },
-    
-});
+    encry_password: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    salt: String,
+    role: {
+        type: Number,
+        default: 0
+    }
+},
+    {timestamps: true}
+);
