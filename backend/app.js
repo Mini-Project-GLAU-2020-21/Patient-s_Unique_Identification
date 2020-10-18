@@ -7,21 +7,22 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
-
-
+//My routes
+const authRoutes = require("./routes/auth");
 
 
 // DB Connection
 mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true ,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
 }).then(() => {
     console.log("DB CONNECTED")
 }).catch( () => {
     console.log("DB GOT OOPS!!")
 });
 
-mongoose.set('useCreateIndex', true);
+
 
 
 
@@ -31,16 +32,16 @@ app.use(cookieParser());
 app.use(cors());
 
 
-
-
+//Routes
+app.use("/api", authRoutes);
 
 
 
 
 // Port
-const port = process.env.PORT || 21096;
+const port = process.env.PORT || 10000;
 
 // starting server
 app.listen(port, () => {
-    console.log(`App is running at ${port}`)
+    console.log(`App is running at ${port}`);
 });
