@@ -1,90 +1,97 @@
-var mongoose = requiure("mangoose");
+var mongoose = require("mongoose");
 const crypto = require("crypto");
-const uuidv4 = require("uuid/v4");
-var mongooseTypePhone = require("mongoose-type-phone");
+const uuidv1 = require("uuid/v1");
+const mongooseTypePhone = require("mongoose-type-phone");
+//const AutoIncrement = require('mongoose-sequence')(mongoose);
 
-var Schema = mongoose.Schema;
-var patientSchema = new Schema({
-    f_name: {
+
+var patientSchema = new mongoose.Schema(
+    {
+      f_name: {
         type: String,
         required: true,
-        maxlength: 15,
+        maxlength: 32,
         trim: true
-    },
-    m_name:{
+      },
+      l_name: {
         type: String,
-        maxlength: 15,
+        maxlength: 32,
         trim: true
-    },
-    l_name: {
+      },
+      email: {
         type: String,
-        maxlength:15,
-        trim: true
-    },
-    email: {
-        type: String,
-        trim:true,
-        unique: true
-    },
-    dob: {
-        type: Date,
+        trim: true,
         required: true,
-        max: Date.now 
-    },
-    contact_number: {
-        type: mongoose.SchemaTypes.Phone,
-        required: 'Phone number should be set correctly',
-        allowBlank: false,
-        allowedNumberTypes: mongooseTypePhone.PhoneNumberType.MOBILE,
-        phoneNumberFormat: mongooseTypePhone.PhoneNumberFormat.INTERNATIONAL, // can be omitted to keep raw input
-        defaultRegion: 'IN',
-        parseOnGet: false
-    },
-    encry_password: {
+        unique: true,
+        index: true
+      },
+      dob: {
+          type: Date,
+          //required: true,
+          max: Date.now 
+      },
+      contact_number: {
+          type: String,
+          maxlength:10,
+          unique: true,
+          index: true
+      },
+      upi: {
+          type: Number
+      },
+      encry_password: {
         type: String,
-        required: true,
-        trim: true
-    },
-    salt: String,
-    role: {
+        required: true
+      },
+      salt: String,
+      role: {
         type: Number,
         default: 0
-    }
-},
-    {timestamps: true}
-);
-
-
+      },
+      documents: {
+        type: Array,
+        default: []
+      }
+    },
+    { timestamps: true }
+  );
+  
+  
 
 patientSchema.virtual("password")
     .set(function(password) {
         this._password = password;
-        this.salt = uuidv4();
+        this.salt = uuidv1();
         this.encry_password = this.securePassword(password);
     })
-    .get(function() {
+    .get(function(){
         return this._password;
-    })
+})
+
 
 
 patientSchema.methods = {
+
     authenticate: function(plainpassword) {
         return this.securePassword(plainpassword) === this.encry_password;
     },
 
-    securePassword: function(plainpassword) {
-        if(!plainpassword) return "";
-        try {
-            returncrypto.createHmac('sha256', this.salt)
-            .update(plainpassword)
-            .digest('hex');
-        }
-        catch (err) {
-            return "";
-        }
+
+    securePassword: function(plainpassword){
+        if (!plainpassword) return "";
+          try {
+              return crypto.createHmac('sha256', this.salt)
+              .update(plainpassword)
+              .digest('hex');
+            } catch (err) {
+                return "";
+            }
     }
 };
 
+
+
+//patientSchema.plugin(AutoIncrement, {inc_field: 'upi', disable_hooks: true, start_seq: 111111111111});
 
 
 module.exports = mongoose.model("Patient", patientSchema)
