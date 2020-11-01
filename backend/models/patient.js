@@ -7,6 +7,10 @@ const mongooseTypePhone = require("mongoose-type-phone");
 
 var patientSchema = new mongoose.Schema(
     {
+      profile_photo:{
+        data: Buffer,
+        contentType: String
+      },
       f_name: {
         type: String,
         required: true,
@@ -30,11 +34,19 @@ var patientSchema = new mongoose.Schema(
           //required: true,
           max: Date.now 
       },
-      contact_number: {
+      p_contact_number: {
           type: String,
           maxlength:10,
           unique: true,
           index: true
+      },
+      r_contact_number: {
+        type: String,
+        maxlength:10
+      },
+      blood_group: {
+        type: String,
+        maxlength: 2
       },
       upi: {
           type: Number
