@@ -44,6 +44,10 @@ var patientSchema = new mongoose.Schema(
         type: String,
         maxlength:10
       },
+      r_relation: {
+        type: String,
+        trim: true
+      },
       address: {
         type: String
       },
