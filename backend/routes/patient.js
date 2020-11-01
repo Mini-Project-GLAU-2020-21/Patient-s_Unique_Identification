@@ -4,3 +4,4 @@ const router = express.Router();
 
 
 const { getPatientById, getPatientByOwn, getPatientForGuest } = require("../controllers/patient");  
+const { isSignedIn, isAdmin, isAuthenticated } = require("../controllers/auth");
