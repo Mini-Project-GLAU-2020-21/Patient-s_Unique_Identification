@@ -33,3 +33,24 @@ exports.getPatientForGuest = (req, res) => {
     req.profile.email = undefined;
     return res.json(req.profile);
 };
+
+
+
+exports.updatePatient = (req, res) => {
+    Patient.findByIdAndUpdate(
+        {_id : req.profile._id},
+        {$set: req.body},
+        {new: true, useFindAndModify: false},
+        (err, patient) => {
+            if(err){
+                return res.status(400).json({
+                    error: "You are not authorized to update this detail."
+                });
+            }
+            patient.salt = undefined;
+            patient.encry_password = undefined;
+            patient.createdAt = undefined;
+            res.json(patient);
+        }
+    );
+};
