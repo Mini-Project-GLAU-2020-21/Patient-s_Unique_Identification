@@ -22,3 +22,14 @@ exports.getPatientByOwn = (req, res) => {
     req.profile.createdAt = undefined;
     return res.json(req.profile);
 };
+
+
+//to return any patient's details for guest login
+exports.getPatientForGuest = (req, res) => {
+    req.profile.salt = undefined;
+    req.profile.encry_password = undefined;
+    req.profile.createdAt = undefined;
+    req.profile.p_contact_number = undefined;
+    req.profile.email = undefined;
+    return res.json(req.profile);
+};
