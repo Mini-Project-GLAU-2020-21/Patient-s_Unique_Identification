@@ -44,6 +44,9 @@ var patientSchema = new mongoose.Schema(
         type: String,
         maxlength:10
       },
+      address: {
+        type: String
+      },
       blood_group: {
         type: String,
         maxlength: 2
