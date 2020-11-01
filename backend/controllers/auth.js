@@ -25,7 +25,8 @@ exports.signup = (req, res) => {
                 });
             }
             res.json({
-                name: patient.name,
+                f_name: patient.f_name,
+                l_name: patient.l_name,
                 email: patient.email,
                 id: patient._id
             });
@@ -65,8 +66,8 @@ exports.signin = (req, res) => {
         res.cookie("token", token, {expire: new Date() + 9999});
 
         //send response on frontend
-        const {_id, name, email, role} = patient;
-        return res.json({ token, patient: {_id, name, email, role}})
+        const {_id, f_name, l_name, email, role} = patient;
+        return res.json({ token, patient: {_id, f_name, l_name, email, role}})
     })
 
 }
