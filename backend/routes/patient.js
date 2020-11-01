@@ -14,3 +14,6 @@ router.get("/patient/:patientId", isSignedIn, isAuthenticated, getPatientByOwn);
 
 router.put("/patient/:patientId", isSignedIn, isAuthenticated, updatePatient);
 
+
+
+module.exports = router;
