@@ -24,3 +24,8 @@ router.get("/category/:categoryId", getCategory);
 
 //"update route"
 router.put("/category/:categoryId/:PatientId", isSignedIn, isAuthenticated, isAdmin, updateCategory);
+
+//delete route
+router.delete("/category/:categoryId/:PatientId", isSignedIn, isAuthenticated, isAdmin, removeCategory);
+
+
