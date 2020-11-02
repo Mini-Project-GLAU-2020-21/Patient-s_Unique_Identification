@@ -29,3 +29,4 @@ router.put("/category/:categoryId/:PatientId", isSignedIn, isAuthenticated, isAd
 router.delete("/category/:categoryId/:PatientId", isSignedIn, isAuthenticated, isAdmin, removeCategory);
 
 
+module.exports = router;
