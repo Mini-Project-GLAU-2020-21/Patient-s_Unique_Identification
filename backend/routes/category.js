@@ -11,3 +11,10 @@ const {isSignedIn, isAuthenticated, isAdmin} = require("../controllers/auth");
 // params
 router.param("PatientId", getPatientById);
 router.param("categoryId", getCategoryById);
+
+
+
+// actual routes goes here
+
+//"create" route
+router.post("/category/create/:PatientId", isSignedIn, isAuthenticated, isAdmin, createCategory);
