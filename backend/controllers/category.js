@@ -26,3 +26,8 @@ exports.getCategoryById = (req, res, next, id) => {
         next();
     });
 };
+
+
+exports.getCategory = (req, res) => {
+    return res.json(req.category);
+}
