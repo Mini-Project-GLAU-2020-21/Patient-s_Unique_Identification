@@ -21,3 +21,6 @@ router.post("/category/create/:PatientId", isSignedIn, isAuthenticated, isAdmin,
 
 //"read" routes
 router.get("/category/:categoryId", getCategory);
+
+//"update route"
+router.put("/category/:categoryId/:PatientId", isSignedIn, isAuthenticated, isAdmin, updateCategory);
