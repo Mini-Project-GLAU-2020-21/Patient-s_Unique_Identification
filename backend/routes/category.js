@@ -18,3 +18,6 @@ router.param("categoryId", getCategoryById);
 
 //"create" route
 router.post("/category/create/:PatientId", isSignedIn, isAuthenticated, isAdmin, createCategory);
+
+//"read" routes
+router.get("/category/:categoryId", getCategory);
