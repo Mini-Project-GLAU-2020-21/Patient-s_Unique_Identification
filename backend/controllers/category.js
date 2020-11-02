@@ -30,7 +30,7 @@ exports.getCategoryById = (req, res, next, id) => {
 
 exports.getCategory = (req, res) => {
     return res.json(req.category);
-}
+};
 
 
 exports.updateCategory = (req, res) => {
@@ -43,5 +43,22 @@ exports.updateCategory = (req, res) => {
             });
         }
         res.json(updatedCategory);
+    });
+};
+
+
+
+exports.removeCategory = (req, res) => {
+    const category = req.category;
+
+    category.remove((err, removedCategory) => {
+        if(err){
+            return res.status(400).json({
+                error: "Failed to delete this category!!!"
+            });
+        }
+        res.json({
+            message: "Successfully deleted."
+        });
     });
 };
