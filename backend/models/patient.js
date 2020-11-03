@@ -77,7 +77,7 @@ var patientSchema = new mongoose.Schema(
   
   
 
-patientSchema.virtual("password")
+/*patientSchema.virtual("password")
     .set(function(password) {
         this._password = password;
         this.salt = uuidv1();
@@ -85,27 +85,58 @@ patientSchema.virtual("password")
     })
     .get(function(){
         return this._password;
+})*/
+
+
+ patientSchema.virtual("password")
+    .set(function(password) {
+        this._password = password;
+        this.salt = uuidv1();
+        this.encry_password = this.securePassword(password);
+        this.upi = this.upiGenerator();
+    })
+    .get(function(){
+        return this._password;
 })
 
 
 
+
+
+
+
 patientSchema.methods = {
-
-    authenticate: function(plainpassword) {
-        return this.securePassword(plainpassword) === this.encry_password;
-    },
-
-
-    securePassword: function(plainpassword){
-        if (!plainpassword) return "";
-          try {
-              return crypto.createHmac('sha256', this.salt)
-              .update(plainpassword)
-              .digest('hex');
-            } catch (err) {
-                return "";
-            }
+  authenticate: function(plainpassword) {
+    return this.securePassword(plainpassword) === this.encry_password;
+  },
+  
+  securePassword: function(plainpassword){
+    if (!plainpassword) return "";
+    try {
+      return crypto.createHmac('sha256', this.salt)
+      .update(plainpassword)
+      .digest('hex');
     }
+    catch (err) {
+      return "";
+    }
+  },
+  upiGenerator: function() {
+    var R1 = ((Math.floor(Math.random() * 1000) < 100) ? '0' : '') + Math.floor(Math.random() * 1000);
+    var now = new Date();
+    timestamp = now.getFullYear().toString(); // 2011
+    timestamp += ((now.getMonth() < 10) ? '0' : '') + now.getMonth().toString();
+    timestamp += ((now.getDate() < 10) ? '0' : '') + now.getDate().toString();
+    timestamp += ((now.getHours() < 10) ? '0' : '') + now.getHours().toString();
+    timestamp += ((now.getMinutes() < 10) ? '0' : '') + now.getMinutes().toString();
+    timestamp += ((now.getSeconds() < 10) ? '0' : '') + now.getSeconds().toString();
+    timestamp += ((now.getMilliseconds() < 100) ? '0' : '') + now.getMilliseconds().toString();
+    timestamp += R1.toString();
+    return timestamp;
+  }
+  
+
+
 };
 
 
