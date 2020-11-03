@@ -9,6 +9,7 @@ const cors = require("cors");
 
 //My routes
 const authRoutes = require("./routes/auth");
+const patientRoutes = require("./routes/patient");
 
 
 // DB Connection
@@ -34,6 +35,7 @@ app.use(cors());
 
 //Routes
 app.use("/api", authRoutes);
+app.use("/api", patientRoutes);
 
 
 
