@@ -11,7 +11,7 @@ public class login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login); getSupportActionBar().setTitle("Login Page");
+        setContentView(R.layout.activity_login); getSupportActionBar().setTitle("Login  Page");
     }
 
     public void btn_signupForm(View view) {
