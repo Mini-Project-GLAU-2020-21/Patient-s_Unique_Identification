@@ -14,6 +14,11 @@ const documentSchema = new mongoose.Schema(
             ref: "Category",
             required: true
         },
+        patient: {
+            type: ObjectId,
+            ref: "Patient",
+            required: true
+        },
         document_pdf: {
            data: Buffer,
             contentType: String
