@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const {ObjectId} = mongoose.Schema;
 
-const documenttSchema = new mongoose.Schema(
+const documentSchema = new mongoose.Schema(
     {
         by_doctor_name: {
             type: String,
@@ -21,3 +21,5 @@ const documenttSchema = new mongoose.Schema(
     }, 
     { timestamps: true }
 );
+
+module.exports = mongoose.model("Document", documentSchema);
