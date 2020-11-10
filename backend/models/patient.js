@@ -5,75 +5,87 @@ const mongooseTypePhone = require("mongoose-type-phone");
 //const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 
-var patientSchema = new mongoose.Schema(
-    {
-      profile_photo:{
-        data: Buffer,
-        contentType: String
-      },
-      f_name: {
-        type: String,
-        required: true,
-        maxlength: 32,
-        trim: true
-      },
-      l_name: {
-        type: String,
-        maxlength: 32,
-        trim: true
-      },
-      email: {
-        type: String,
-        trim: true,
-        required: true,
-        unique: true,
-        index: true
-      },
-      dob: {
-          type: Date,
-          //required: true,
-          max: Date.now 
-      },
-      p_contact_number: {
-          type: String,
-          maxlength:10,
-          unique: true,
-          index: true
-      },
-      r_contact_number: {
-        type: String,
-        maxlength:10
-      },
-      r_relation: {
-        type: String,
-        trim: true
-      },
-      address: {
-        type: String
-      },
-      blood_group: {
-        type: String,
-        maxlength: 2
-      },
-      upi: {
-          type: Number
-      },
-      encry_password: {
-        type: String,
-        required: true
-      },
-      salt: String,
-      role: {
-        type: Number,
-        default: 0
-      },
-      documents: {
-        type: Array,
-        default: []
-      }
+var patientSchema = new mongoose.Schema({
+    profile_photo:{
+      data: Buffer,
+      contentType: String
     },
-    { timestamps: true }
-  );
+    f_name: {
+      type: String,
+      required: true,
+      maxlength: 32,
+      trim: true
+    },
+    l_name: {
+      type: String,
+      maxlength: 32,
+      trim: true
+    },
+    email: {
+      type: String,
+      trim: true,
+      required: true,
+      unique: true,
+      index: true
+    },
+    dob: {
+      type: Date,
+      //required: true,
+      max: Date.now 
+    },
+    p_contact_number: {
+      type: String,
+      maxlength:10,
+      unique: true,
+      index: true
+    },
+    r_contact_number: {
+      type: String,
+      maxlength:10
+    },
+    r_relation: {
+      type: String,
+      trim: true
+    },
+    address: {
+      type: String
+    },
+    blood_group: {
+      type: String,
+      maxlength: 2
+    },
+    upi: {
+      type: Number
+    },
+    encry_password: {
+      type: String,
+      required: true
+    },
+    salt: String,
+    role: {
+      type: Number,
+      default: 0
+    }
+    /*documents: {
+      type: Array,
+      default: []
+    }*/
+
+      
+    /*documents: [{
+      by_doctor: String,
+      category_of_document: {
+        type: ObjectId,
+        ref: 'Category'
+      },
+      media: {
+        type: ObjectId,
+        ref: 'document'
+      }
+    }]*/
+  },
+  { timestamps: true }
+);
   
   
 
@@ -88,16 +100,17 @@ var patientSchema = new mongoose.Schema(
 })*/
 
 
- patientSchema.virtual("password")
-    .set(function(password) {
-        this._password = password;
-        this.salt = uuidv1();
-        this.encry_password = this.securePassword(password);
-        this.upi = this.upiGenerator();
-    })
-    .get(function(){
-        return this._password;
+patientSchema.virtual("password")
+  .set(function(password) {
+    this._password = password;
+    this.salt = uuidv1();
+    this.encry_password = this.securePassword(password);
+    this.upi = this.upiGenerator();
+  })
+  .get(function(){
+    return this._password;
 })
+
 
 
 
