@@ -105,7 +105,23 @@ exports.uploadDocument = (req, res) => {
             docu.category = category
         }
 
-        
+        Patient.findByIdAndUpdate(
+            {_id: req.profile._id},
+            {$push: {documents: docu}},
+            {new: true, useFindAndModify: false},
+            (err, patient) => {
+                if(err){
+                    return res.status(400).json({
+                        error: "You are not authorized to update this detail."
+                    });
+                }
+                patient.salt = undefined;
+                patient.encry_password = undefined;
+                patient.createdAt = undefined;
+                patient.documents = undefined;
+                res.json(patient);
+            }
+        );
     });
     
 };
