@@ -1,4 +1,13 @@
 const Patient = require("../models/patient");
+const Documents = require("../models/document");
+const formidable = require("formidable");
+const { deleteOne } = require("../models/patient");
+const { size, sortBy } = require("lodash");
+const fs = require("fs");            //fs stands for file system. we don't need to install it..it comes inbuilt with nodejs
+const document = require("../models/document");
+
+
+
 
 
 
@@ -35,7 +44,7 @@ exports.getPatientForGuest = (req, res) => {
 };
 
 
-
+// to update patient
 exports.updatePatient = (req, res) => {
     Patient.findByIdAndUpdate(
         {_id : req.profile._id},
@@ -53,4 +62,12 @@ exports.updatePatient = (req, res) => {
             res.json(patient);
         }
     );
+};
+
+
+
+
+// to upload a document in patient's schema
+exports.uploadDocument = (req, res) => {
+    
 };
