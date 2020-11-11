@@ -9,22 +9,17 @@ const documentSchema = new mongoose.Schema(
             required: true,
             maxlength: 32
         },
-        category:{
+        category: {
+            required: true,
             type: ObjectId,
-            ref: "Category",
-            required: true
+            ref: 'Category'
         },
-        patient: {
-            type: ObjectId,
-            ref: "Patient",
+        document_file: {
+            data: Buffer,
+            contentType: String,
             required: true
-        },
-        document_pdf: {
-           data: Buffer,
-            contentType: String
         }
-    }, 
-    { timestamps: true }
+    }
 );
 
-module.exports = mongoose.model("Document", documentSchema);
+module.exports = mongoose.model("Documents", documentSchema);
