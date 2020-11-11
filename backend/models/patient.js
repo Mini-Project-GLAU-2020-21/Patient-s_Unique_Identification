@@ -1,8 +1,6 @@
 var mongoose = require("mongoose");
 const crypto = require("crypto");
 const uuidv1 = require("uuid/v1");
-const mongooseTypePhone = require("mongoose-type-phone");
-//const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 
 var patientSchema = new mongoose.Schema({
@@ -65,39 +63,13 @@ var patientSchema = new mongoose.Schema({
     role: {
       type: Number,
       default: 0
-    }
-    /*documents: {
-      type: Array,
-      default: []
-    }*/
-
-      
-    /*documents: [{
-      by_doctor: String,
-      category_of_document: {
-        type: ObjectId,
-        ref: 'Category'
-      },
-      media: {
-        type: ObjectId,
-        ref: 'document'
-      }
-    }]*/
+    },
+    documents: []
   },
   { timestamps: true }
 );
   
-  
 
-/*patientSchema.virtual("password")
-    .set(function(password) {
-        this._password = password;
-        this.salt = uuidv1();
-        this.encry_password = this.securePassword(password);
-    })
-    .get(function(){
-        return this._password;
-})*/
 
 
 patientSchema.virtual("password")
@@ -110,11 +82,6 @@ patientSchema.virtual("password")
   .get(function(){
     return this._password;
 })
-
-
-
-
-
 
 
 
@@ -134,27 +101,20 @@ patientSchema.methods = {
       return "";
     }
   },
+
   upiGenerator: function() {
     var R1 = ((Math.floor(Math.random() * 1000) < 100) ? '0' : '') + Math.floor(Math.random() * 1000);
     var now = new Date();
-    timestamp = now.getFullYear().toString(); // 2011
-    timestamp += ((now.getMonth() < 10) ? '0' : '') + now.getMonth().toString();
-    timestamp += ((now.getDate() < 10) ? '0' : '') + now.getDate().toString();
-    timestamp += ((now.getHours() < 10) ? '0' : '') + now.getHours().toString();
-    timestamp += ((now.getMinutes() < 10) ? '0' : '') + now.getMinutes().toString();
-    timestamp += ((now.getSeconds() < 10) ? '0' : '') + now.getSeconds().toString();
-    timestamp += ((now.getMilliseconds() < 100) ? '0' : '') + now.getMilliseconds().toString();
-    timestamp += R1.toString();
-    return timestamp;
+    UPI = now.getFullYear().toString(); // 2011
+    UPI += ((now.getMonth() < 10) ? '0' : '') + now.getMonth().toString();
+    UPI += ((now.getDate() < 10) ? '0' : '') + now.getDate().toString();
+    UPI += ((now.getHours() < 10) ? '0' : '') + now.getHours().toString();
+    UPI += ((now.getMinutes() < 10) ? '0' : '') + now.getMinutes().toString();
+    UPI += ((now.getSeconds() < 10) ? '0' : '') + now.getSeconds().toString();
+    UPI += ((now.getMilliseconds() < 100) ? '0' : '') + now.getMilliseconds().toString();
+    UPI += R1.toString();
+    return UPI;
   }
-  
-
-
 };
-
-
-
-//patientSchema.plugin(AutoIncrement, {inc_field: 'upi', disable_hooks: true, start_seq: 111111111111});
-
 
 module.exports = mongoose.model("Patient", patientSchema)
