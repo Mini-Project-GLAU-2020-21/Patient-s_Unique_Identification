@@ -69,5 +69,43 @@ exports.updatePatient = (req, res) => {
 
 // to upload a document in patient's schema
 exports.uploadDocument = (req, res) => {
+    let form = new formidable.IncomingForm();
+    form.keepExtensions = true;
+
+    form.parse(req, (err, fields, file) => {
+        if (err) {
+            return res.status(400).json({
+                error: "Problem with file."
+            });
+        }
+
+        // destructure the field
+        const { category, by_doctor_name } = fields;
+
+
+        if(!category || !by_doctor_name) {
+            return res.status(400).json({
+                error: "Please include all the fields."
+            });
+        }
+        
+        let docu  = new Documents(fields);
+
+
+        // handle file here
+        if(file.document_file){
+            if(file.document_file.size > 1000000) {           // checking the size of the file should be less than 1000000 bytes (0.95 MB)
+                return res.status(400).json({
+                    error: "File is too big."
+                })
+            }
+            docu.document_file.data = fs.readFileSync(file.document_file.path)
+            docu.document_file.contentType = file.document_file.type
+            docu.by_doctor_name = by_doctor_name
+            docu.category = category
+        }
+
+        
+    });
     
 };
