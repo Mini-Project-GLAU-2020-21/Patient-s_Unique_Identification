@@ -29,6 +29,7 @@ exports.getPatientByOwn = (req, res) => {
     req.profile.salt = undefined;
     req.profile.encry_password = undefined;
     req.profile.createdAt = undefined;
+    req.profile.documents = undefined;
     return res.json(req.profile);
 };
 
@@ -59,6 +60,7 @@ exports.updatePatient = (req, res) => {
             patient.salt = undefined;
             patient.encry_password = undefined;
             patient.createdAt = undefined;
+            patient.documents = undefined;
             res.json(patient);
         }
     );
