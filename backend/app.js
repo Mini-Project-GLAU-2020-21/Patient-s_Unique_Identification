@@ -10,7 +10,7 @@ const cors = require("cors");
 //My routes
 const authRoutes = require("./routes/auth");
 const patientRoutes = require("./routes/patient");
-
+const categoryRoutes = require("./routes/category");
 
 // DB Connection
 mongoose.connect(process.env.DATABASE, {
@@ -36,7 +36,7 @@ app.use(cors());
 //Routes
 app.use("/api", authRoutes);
 app.use("/api", patientRoutes);
-
+app.use("/api", categoryRoutes);
 
 
 
