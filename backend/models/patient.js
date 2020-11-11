@@ -64,7 +64,11 @@ var patientSchema = new mongoose.Schema({
       type: Number,
       default: 0
     },
-    documents: []
+    documents: [],
+    no_of_documents: {
+      type: Number,
+      default: 0
+    }
   },
   { timestamps: true }
 );
