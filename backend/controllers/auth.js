@@ -17,20 +17,21 @@ exports.signup = (req, res) => {
         });
     };
 
+   // req.body.upi=upiGenerator();
     const patient = new Patient(req.body)
     patient.save((err, patient) => {
-            if(err || !patient){
-                return res.status(400).json({
-                    err: "NOT able to save patient in DB"
-                });
-            }
-            res.json({
-                f_name: patient.f_name,
-                l_name: patient.l_name,
-                email: patient.email,
-                id: patient._id
+        if(err || !patient){
+            return res.status(400).json({
+                err: "NOT able to save patient in DB"
             });
+        }
+        res.json({
+            f_name: patient.f_name,
+            l_name: patient.l_name,
+            email: patient.email,
+            id: patient._id
         });
+    });
 };
 
 
@@ -81,14 +82,16 @@ exports.signout = (req, res) => {
 
 
 
+
+
 //protected routes
+
+
+
 exports.isSignedIn = expressJwt({
     secret: process.env.SECRET_Key,
     userProperty: "auth"
 });
-
-
-
 
 
 //custom middlewares
