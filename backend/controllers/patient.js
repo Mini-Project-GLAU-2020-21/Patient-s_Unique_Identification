@@ -4,7 +4,6 @@ const formidable = require("formidable");
 const { deleteOne } = require("../models/patient");
 const { size, sortBy } = require("lodash");
 const fs = require("fs");            //fs stands for file system. we don't need to install it..it comes inbuilt with nodejs
-const document = require("../models/document");
 
 
 
@@ -125,5 +124,20 @@ exports.uploadDocument = (req, res) => {
             }
         );
     });
-    
 };
+
+
+/*exports.viewDocument = (req, res) => {
+    const documents = req.profile.documents;
+    if (documents.length === 0) {
+        return res.status(400).json({
+            message: "No document found in your DB"
+        })
+    }
+
+    documents
+    .populate("category")
+    .sort([[sortBy,"asc"]])
+    .select("-documents_file")
+    .exec((err, ))
+};*/
