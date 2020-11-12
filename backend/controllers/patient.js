@@ -127,17 +127,28 @@ exports.uploadDocument = (req, res) => {
 };
 
 
-/*exports.viewDocument = (req, res) => {
+
+
+// to view list of all the documents
+exports.viewListOfDocuments = (req, res) => {
     const documents = req.profile.documents;
     if (documents.length === 0) {
         return res.status(400).json({
             message: "No document found in your DB"
-        })
+        });
     }
 
     documents
     .populate("category")
     .sort([[sortBy,"asc"]])
     .select("-documents_file")
-    .exec((err, ))
-};*/
+    .exec((err, docs) => {
+        if (err) {
+            return res.status(400).json({
+                error: "Error in viewing documents"
+            });
+        }
+        docs.document_file = undefined;
+        res.json(docs)
+    });
+};
