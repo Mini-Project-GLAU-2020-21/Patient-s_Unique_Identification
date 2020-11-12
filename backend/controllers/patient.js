@@ -137,18 +137,26 @@ exports.viewListOfDocuments = (req, res) => {
             message: "No document found in your DB"
         });
     }
-
-    documents
-    .populate("category")
-    .sort([[sortBy,"asc"]])
-    .select("-documents_file")
+    else {
+        //documents.forEach(function(err, doc) {
+        res.json(documents);
+     //});
+    return ;
+    }
+    
+    //return res.json(documents);
+    /*documents
+    //.select("-document_file")
+    //.populate("category")
+    //.sort([["asc"]])
+    //.select("-documents_file")
     .exec((err, docs) => {
         if (err) {
             return res.status(400).json({
                 error: "Error in viewing documents"
             });
         }
-        docs.document_file = undefined;
+        //docs.document_file = undefined;
         res.json(docs)
-    });
+    });*/
 };
