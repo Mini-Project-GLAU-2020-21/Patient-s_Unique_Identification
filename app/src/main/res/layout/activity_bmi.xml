@@ -46,4 +46,19 @@
         android:padding="15dp"
         android:inputType="numberDecimal"
         />
+    
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
+        android:layout_marginHorizontal="30dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Result"
+        android:textSize="35sp"
+
+        />
 </LinearLayout>
