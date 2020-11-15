@@ -12,6 +12,14 @@
     android:layout_height="wrap_content"
     android:text="BMI Calculator"
     android:textSize="45sp"
+    android:textColor="#000"
     />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:text="Your Weight in Kg"
+        android:layout_marginHorizontal="30dp"
+        />
 
 </LinearLayout>
