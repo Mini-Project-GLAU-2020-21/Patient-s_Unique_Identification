@@ -30,6 +30,7 @@
         android:padding="15dp"
         android:inputType="numberDecimal"
         android:layout_marginVertical="15dp"
+        android:background="@drawable/edit_bg"
         />
 
     <TextView
@@ -47,6 +48,7 @@
         android:layout_marginHorizontal="30dp"
         android:padding="15dp"
         android:inputType="numberDecimal"
+        android:background="@drawable/edit_bg"
         />
     
     <Button
@@ -55,6 +57,7 @@
         android:layout_marginVertical="15dp"
         android:layout_marginHorizontal="30dp"
         android:text="Calculate"
+        android:background="@drawable/btn_bg"
         />
     <TextView
         android:layout_width="match_parent"
@@ -62,6 +65,7 @@
         android:textAlignment="center"
         android:text="Result"
         android:textSize="35sp"
+        android:textColor="#000"
 
         />
     <TextView
