@@ -41,7 +41,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/aclonica"
-                        android:text="WE CARE'S F YOU"
+                        android:text="WE CARE'S  YOU"
                         android:textAllCaps="true"
                         android:textColor="@android:color/holo_orange_dark"
                         android:textSize="30sp"
