@@ -23,6 +23,7 @@
         android:layout_marginHorizontal="30dp"
         />
     <EditText
+        android:id="@+id/Weight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
@@ -40,6 +41,7 @@
         android:layout_marginVertical="15dp"
         />
     <EditText
+        android:id="@+id/Height"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
@@ -52,6 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="15dp"
         android:layout_marginHorizontal="30dp"
+        android:text="Calculate"
         />
     <TextView
         android:layout_width="match_parent"
@@ -60,5 +63,12 @@
         android:text="Result"
         android:textSize="35sp"
 
+        />
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="45sp"
         />
 </LinearLayout>
