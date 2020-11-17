@@ -211,7 +211,9 @@
                                     android:layout_height="match_parent"
                                     android:id="@+id/buttonBMI"
                                     android:background="@android:color/transparent"
+                                    android:onClick="btn_BMI"
                                     tools:ignore="DuplicateIds">
+
                                 </Button>
 
                             </RelativeLayout>
