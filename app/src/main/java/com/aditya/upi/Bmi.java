@@ -3,6 +3,8 @@ package com.aditya.upi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class Bmi extends AppCompatActivity {
 
@@ -10,6 +12,9 @@ public class Bmi extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi);
+
+        EditText Weight,Height;
+        TextView txtenter, txtbmi;
 
     }
 
