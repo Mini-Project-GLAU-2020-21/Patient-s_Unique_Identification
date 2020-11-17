@@ -16,7 +16,7 @@ public class Bmi extends AppCompatActivity {
         setContentView(R.layout.activity_bmi);
 
         final EditText Weight,Height;
-        TextView txtEnter, txtBMI;
+        final TextView txtEnter, txtBMI;
         Button btnResult,btnReset;
 
         Weight=(EditText) findViewById(R.id.weight);
@@ -38,7 +38,7 @@ public class Bmi extends AppCompatActivity {
                 if (strW.equals(""))
                 {
                     Weight.setError("Enter your Weight");
-                    Weight.requestFocus();
+                     Weight.requestFocus();
                     return;
                 }
                 if (strH.equals(""))
@@ -49,6 +49,21 @@ public class Bmi extends AppCompatActivity {
                 }
 
 
+                float wed= Float.parseFloat(strW);
+                float heg= Float.parseFloat(strH)/100;
+                float bmiV=BMICalculate(wed,heg);
+
+                txtEnter.setText(interpretateBMI(bmiV));
+                txtBMI.setText("BMI ="+bmiV);
+            }
+        });
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Weight.setText("");
+                Height.setText("");
+                txtEnter.setText("");
+                txtBMI.setText("");
             }
         });
 
