@@ -3,6 +3,8 @@ package com.aditya.upi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -13,8 +15,42 @@ public class Bmi extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi);
 
-        EditText Weight,Height;
-        TextView txtenter, txtbmi;
+        final EditText Weight,Height;
+        TextView txtEnter, txtBMI;
+        Button btnResult,btnReset;
+
+        Weight=(EditText) findViewById(R.id.weight);
+        Height=(EditText) findViewById(R.id.height);
+
+        txtEnter=(TextView) findViewById(R.id.txtenter);
+        txtBMI=(TextView) findViewById(R.id.txtbmi);
+
+        btnReset=(Button) findViewById(R.id.btnreset);
+        btnResult=(Button) findViewById(R.id.btnresult);
+
+        btnResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String strW= Weight.getText().toString();
+                String strH= Height.getText().toString();
+
+                if (strW.equals(""))
+                {
+                    Weight.setError("Enter your Weight");
+                    Weight.requestFocus();
+                    return;
+                }
+                if (strH.equals(""))
+                {
+                    Height.setError("Enter your Height");
+                    Height.requestFocus();
+                    return;
+                }
+
+
+            }
+        });
 
     }
 
