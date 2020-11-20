@@ -48,7 +48,6 @@ public class Bmi extends AppCompatActivity {
                     return;
                 }
 
-
                 float wed= Float.parseFloat(strW);
                 float heg= Float.parseFloat(strH)/100;
                 float bmiV=BMICalculate(wed,heg);
