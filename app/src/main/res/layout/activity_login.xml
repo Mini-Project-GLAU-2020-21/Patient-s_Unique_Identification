@@ -20,7 +20,7 @@
         android:focusableInTouchMode="true"
         android:textColorHint="@color/cardview_light_background">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
         app:passwordToggleEnabled="true">
 
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
         android:textStyle="bold" />
 
     <TextView
-
+        android:id="@+id/editsignupp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
