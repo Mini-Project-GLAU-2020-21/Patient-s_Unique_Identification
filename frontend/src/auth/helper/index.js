@@ -13,10 +13,10 @@ export const signup = patient => {
     .then(response => {
         return response.json();
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+        return console.log(err)
+    });
 };
-
-
 export const signin = patient => {
     return fetch(`${API}/signin`, {
         method: "POST",
@@ -29,7 +29,9 @@ export const signin = patient => {
     .then(response => {
         return response.json();
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+        return console.log(err)
+    });
 };
 
 
@@ -49,8 +51,12 @@ export const signout = next => {
         return fetch(`${API}/signout`, {
             method: "GET"
         })
-        .then(response => console.log("Signed out Successfully"))
-        .catch(err => console.log(err))
+        .then(response => {
+            return console.log("Signed out Successfully")
+        })
+        .catch(err => {
+            return console.log(err)
+        });
     }   
 };
 
