@@ -3,6 +3,9 @@ const {ObjectId} = mongoose.Schema;
 
 const documentSchema = new mongoose.Schema(
     {
+        fileName: {
+          type: String 
+        },
         by_doctor_name: {
             type: String,
             trim: true,
@@ -11,6 +14,9 @@ const documentSchema = new mongoose.Schema(
         category: {
             type: ObjectId,
             ref: 'Category'
+        },
+        categoryName: {
+            type: String
         },
         document_file: {
             data: Buffer,
