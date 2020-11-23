@@ -22,7 +22,7 @@ exports.signup = (req, res) => {
     patient.save((err, patient) => {
         if(err || !patient){
             return res.status(400).json({
-                err: "NOT able to save patient in DB"
+                error: "Not able to save your details in our database."
             });
         }
         res.json({
@@ -64,8 +64,11 @@ exports.signin = (req, res) => {
         res.cookie("token", token, {expire: new Date() + 9999});
 
         //send response on frontend
-        const {_id, f_name, l_name, email, role} = patient;
-        return res.json({ token, patient: {_id, f_name, l_name, email, role}})
+        const {_id, f_name, l_name, email, p_contact_number, r_contact_number, 
+                r_name, r_relation , address, blood_group, upi, dob , role} = patient;
+                
+        return res.json({ token, patient: {_id, f_name, l_name, email, p_contact_number,
+             r_contact_number, r_name, r_relation , address, blood_group, upi, dob , role}})
     })
 
 }
