@@ -7,7 +7,7 @@ import {signin, authenticate, isAuthenticated} from "../auth/helper"
 const Signin = () => {
 
     const [values, setValues] = useState({
-        email: "abhibhardwaj09@gmail.com",
+        email: "abhinav@yahoo.com",
         password: "12345",
         error: "",
         loading: false,
@@ -18,8 +18,8 @@ const Signin = () => {
 
     const {patient} = isAuthenticated();
 
-    const handleChange = f_name => event => {
-        setValues({...values, error: false, [f_name]: event.target.value});
+    const handleChange = field_name => event => {
+        setValues({...values, error: false, [field_name]: event.target.value});
     }
 
     const onSubmit = event => {
@@ -34,21 +34,24 @@ const Signin = () => {
                     setValues({
                         ...values,
                         didRedirect: true
-                    })
-                })
+                    });
+                });
             }
         })
-        .catch(console.log("Sign In request failed"))
+        .catch(() => {
+            console.log("Sign In request failed")})
     }
 
     const performRedirect = () => {
 
         //TODO: do a redirect here
         if(didRedirect){
-            if(patient && patient.role === 1){
-                return <p>redirect to admin</p>
-            } else {
-                return <p>redirect to patient dashboard</p>
+            if(didRedirect){
+                if(patient && patient.role === 0){
+                    return <Redirect to="/patient/dashboard" />
+                } else {
+                    return <p>redirect to admin dashboard</p>
+                }
             }
         }
         if(isAuthenticated()){
@@ -115,7 +118,6 @@ const Signin = () => {
         {errorMessage()}
         {signInForm()}
         {performRedirect()}
-    <p className="text-white text-center">{JSON.stringify(values)}</p>
         </Base>
     );
 };
