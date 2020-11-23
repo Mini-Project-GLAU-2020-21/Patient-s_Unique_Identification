@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { signup } from '../auth/helper';
 import Base from '../core/Base';
 
@@ -8,13 +8,14 @@ const Signup = () => {
 
 
     const [values, setValues] = useState({
-        f_name: "",
+        f_name: "Abhinav",
         l_name: "",
-        email: "",
-        password: "",
+        email: "abhinav@yahoo.com",
+        password: "12345",
         dob: "",
-        p_contact_number: "",
+        p_contact_number: "9713110857",
         error: "",
+        loading: false,
         success: false
     });
 
@@ -28,7 +29,7 @@ const Signup = () => {
 
     const onSubmit = event => {
         event.preventDefault();
-        setValues({...values, error: false});
+        setValues({...values, error: false, loading: true});
         signup({f_name, l_name, email, password, dob, p_contact_number})
         .then(data => {
             if(data.error){
@@ -46,9 +47,57 @@ const Signup = () => {
                 });
             }
         })
-        .catch(console.log("Error in creating new account"));
-        
+        .catch(()=>{
+            return console.log("Error in creating new account")
+        });
     }
+
+
+
+    const performRedirect = () => {
+        if(success){
+           return <Redirect to="/SignupSuccess"/>
+        } else if(error==="Not able to save your details in our database."){
+            return <Redirect to="/SignupFailed" />
+        } 
+    }
+
+
+
+    /*const successMessage = () => {
+        return (
+        <div className="row">
+            <div className="col-md-6 offset-sm-3 text-left">
+              <div
+                className="alert alert-success"
+                style={{ display: success ? "" : "none" }}
+              >
+                Your account created successfully. Please{" "}
+                <Link to="/signin">Login Here</Link>
+              </div>
+            </div>
+        </div>);
+      };*/
+    
+      const errorMessage = () => {
+        return (
+          <div className="row">
+            <div className="col-md-6 offset-sm-3 text-left">
+              <div
+                className="alert alert-danger"
+                style={{ display: error ? "" : "none" }}
+              >
+                {error}
+              </div>
+            </div>
+          </div>
+        );
+      };
+
+
+
+
+
 
     const signUpForm = () => {
         return(
@@ -83,7 +132,7 @@ const Signup = () => {
 
                         <div className="form-group">
                             <label className="text-dark">Date of Birth</label>
-                            <input className="form-control" onChange={handleChange("dob")} type="date" min="2000-02-15" max="2020-11-05" value={dob}/>
+                            <input className="form-control" onChange={handleChange("dob")} type="date" min="1947-01-01" max="2020-11-05" value={dob}/>
                         </div>
                         
 
@@ -138,44 +187,15 @@ const Signup = () => {
     }
 
 
-    const successMessage = () => {
-        return (
-          <div className="row">
-            <div className="col-md-6 offset-sm-3 text-left">
-              <div
-                className="alert alert-success"
-                style={{ display: success ? "" : "none" }}
-              >
-                Your account created successfully. Please{" "}
-                <Link to="/signin">Login Here</Link>
-              </div>
-            </div>
-          </div>
-        );
-      };
     
-      const errorMessage = () => {
-        return (
-          <div className="row">
-            <div className="col-md-6 offset-sm-3 text-left">
-              <div
-                className="alert alert-danger"
-                style={{ display: error ? "" : "none" }}
-              >
-                {error}
-              </div>
-            </div>
-          </div>
-        );
-      };
     
 
     return(
         <Base title="Create New Account" description="Enter your details" >
-        {signUpForm()}
-        {successMessage()}
+        {/*{successMessage()}*/}
         {errorMessage()}
-        <p className="text-white text-center">hi</p>
+        {signUpForm()}
+        {performRedirect()}
         </Base>
     );
 };
