@@ -14,7 +14,13 @@ public class Dash extends AppCompatActivity {
         setContentView(R.layout.activity_dash);
     }
 
-    public void btn_BMI(View view) {
+    public void btn_BMI(View view)
+    {
         startActivity(new Intent(getApplicationContext(),Bmi.class));
     }
+    public void btn_Profile(View view)
+    {
+        startActivity(new Intent(getApplicationContext(),Profile.class));
+    }
 }
+

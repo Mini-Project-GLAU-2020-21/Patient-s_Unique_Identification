@@ -1,9 +1,334 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".Profile">
-    <include layout="@layout/toolbar"></include>
-</RelativeLayout>
+
+    <include layout="@layout/toolbar" />
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:orientation="vertical"-->
+<!--        android:paddingTop="10dp">-->
+
+<!--        <com.mikhaellopez.circularimageview.CircularImageView-->
+<!--            android:id="@+id/image"-->
+<!--            android:layout_width="130dp"-->
+<!--            android:layout_height="130dp"-->
+<!--            android:src="@drawable/back"/>-->
+<!--        -->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Aditya singh"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="#1282D8"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            />-->
+<!--<view-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="2dp"-->
+<!--    android:background="#1282D8"-->
+<!--    android:layout_marginTop="10dp"/>-->
+
+
+
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingRight="20dp"-->
+<!--        android:layout_marginTop="5dp">-->
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:src="@drawable/ic_pui"/>-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="PUI id"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textColor="#000"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginLeft="10dp"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="9411688455"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textColor="#9C9A9A"-->
+<!--            android:layout_marginLeft="40dp">-->
+
+<!--        </TextView>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <view-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="#1282D8"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingRight="20dp"/>-->
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingRight="20dp"-->
+<!--        android:layout_marginTop="10dp">-->
+<!--    <ImageView-->
+<!--        android:layout_width="25dp"-->
+<!--        android:layout_height="25dp"-->
+<!--        android:src="@drawable/ic_person"/>-->
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="First Name"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textColor="#000"-->
+<!--        android:textStyle="bold"-->
+<!--        android:layout_marginLeft="10dp"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Aditya Singh "-->
+<!--            android:textSize="20dp"-->
+<!--            android:textColor="#9C9A9A"-->
+<!--            android:layout_marginLeft="20dp">-->
+
+<!--        </TextView>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <view-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="#1282D8"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingRight="20dp"/>-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingRight="20dp"-->
+<!--        android:layout_marginTop="5dp">-->
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:src="@drawable/ic_person"/>-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Last Name"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textColor="#000"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginLeft="10dp"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Chauhan"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textColor="#9C9A9A"-->
+<!--            android:layout_marginLeft="20dp">-->
+
+<!--        </TextView>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <view-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="#1282D8"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingRight="20dp"/>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingRight="20dp"-->
+<!--        android:layout_marginTop="5dp">-->
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:src="@drawable/ie_mail"/>-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Email"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textColor="#000"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginLeft="10dp"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="saditya2501@gmail.com"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textColor="#9C9A9A"-->
+<!--            android:layout_marginLeft="60dp">-->
+
+<!--        </TextView>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <view-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--    android:background="#1282D8"-->
+<!--    android:layout_marginTop="10dp"-->
+<!--    android:paddingLeft="20dp"-->
+<!--    android:paddingRight="20dp"/>-->
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingRight="20dp"-->
+<!--        android:layout_marginTop="5dp">-->
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:src="@drawable/ic_phone"/>-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Contact"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textColor="#000"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginLeft="10dp"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="9411688455"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textColor="#9C9A9A"-->
+<!--            android:layout_marginLeft="40dp">-->
+
+<!--        </TextView>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <view-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="#1282D8"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingRight="20dp"/>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingRight="20dp"-->
+<!--        android:layout_marginTop="5dp">-->
+<!--        <ImageView-->
+<!--            android:layout_width="25dp"-->
+<!--            android:layout_height="25dp"-->
+<!--            android:src="@drawable/ic_blood"/>-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Blood Group"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textColor="#000"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_marginLeft="10dp"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="A+"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textColor="#9C9A9A"-->
+<!--            android:layout_marginLeft="40dp">-->
+
+<!--        </TextView>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <view-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="#1282D8"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:paddingLeft="20dp"-->
+<!--        android:paddingRight="20dp"/>-->
+<!--    -->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:orientation="vertical"-->
+<!--        >-->
+
+<!--        <TextView-->
+<!--            android:layout_width="170dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:background="@drawable/edit_bg"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="15dp"-->
+<!--            android:text="Edit Profile  "-->
+<!--            android:textSize="19dp"-->
+<!--            android:textColor="#1282D8"-->
+<!--            android:drawableLeft="@drawable/ic_edit"-->
+<!--            android:layout_marginLeft="120dp"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="220dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:background="@drawable/edit_bg"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="5dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:text="Logout  "-->
+<!--            android:textSize="25dp"-->
+<!--            android:textColor="#1282D8"-->
+<!--            android:drawableLeft="@drawable/ic_logout"-->
+<!--            android:layout_marginLeft="95dp">-->
+
+<!--            <Button-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:id="@+id/logout"-->
+<!--                android:background="@android:color/transparent"-->
+
+<!--                tools:ignore="DuplicateIds">-->
+<!--            </Button>-->
+<!--        </TextView>-->
+
+
+<!--    </LinearLayout>-->
+
+
+</LinearLayout>
+

@@ -105,8 +105,9 @@
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/buttonto"
+                                    android:id="@+id/Prfile"
                                     android:background="@android:color/transparent"
+                                    android:onClick="btn_Profile"
                                     tools:ignore="DuplicateIds">
                                 </Button>
 
