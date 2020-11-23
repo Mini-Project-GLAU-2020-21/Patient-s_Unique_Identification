@@ -35,11 +35,17 @@ var patientSchema = new mongoose.Schema({
       type: String,
       maxlength:10,
       unique: true,
-      index: true
+      index: true,
+      trim: true
+    },
+    r_name: {
+      type: String,
+      trim: true
     },
     r_contact_number: {
       type: String,
-      maxlength:10
+      maxlength:10,
+      trim: true
     },
     r_relation: {
       type: String,
@@ -53,7 +59,7 @@ var patientSchema = new mongoose.Schema({
       maxlength: 2
     },
     upi: {
-      type: Number
+      type: String
     },
     encry_password: {
       type: String,
