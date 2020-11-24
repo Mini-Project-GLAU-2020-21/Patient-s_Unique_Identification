@@ -58,6 +58,9 @@ var patientSchema = new mongoose.Schema({
       type: String,
       maxlength: 2
     },
+    gender: {
+      type: String
+    },
     upi: {
       type: String
     },
