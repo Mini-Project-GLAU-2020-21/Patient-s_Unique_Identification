@@ -7,12 +7,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 public class Bmi extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi);
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         final EditText Weight,Height;
         final TextView txtEnter, txtBMI;

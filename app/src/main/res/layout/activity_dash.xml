@@ -162,6 +162,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:id="@+id/Profile"
+                                    android:onClick="btn_records"
                                     android:background="@android:color/transparent"
                                     >
                                 </Button>
@@ -258,6 +259,7 @@
                                     android:layout_below="@+id/veiw3"
                                     android:layout_centerHorizontal="true"
                                     android:layout_marginBottom="10dp"
+
                                     android:layout_marginTop="10dp">
 
                                 </TextView>
@@ -266,6 +268,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:id="@+id/buttonPdf"
+                                    android:onClick="btn_upload"
                                     android:background="@android:color/transparent"
                                     >
                                 </Button>
@@ -314,6 +317,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:id="@+id/buttonImage"
+                                    android:onClick="btn_todo"
                                     android:background="@android:color/transparent"
                                     >
                                 </Button>

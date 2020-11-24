@@ -26,7 +26,7 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getvalue();
-
+        Objects.requireNonNull(getSupportActionBar()).hide();
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
