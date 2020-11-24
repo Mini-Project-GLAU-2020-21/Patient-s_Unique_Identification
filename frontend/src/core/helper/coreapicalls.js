@@ -15,22 +15,16 @@ export const getPatientForGuest = async ({upi:upi}) => {
     })
     console.log(patient)*/
     
-   await axios.post(`${API}/guest/patient/`, UPI ,{
+   await axios.post(`${API}/guest/patient`, UPI ,{
         headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
         }
         
-        })
-        .then(response=> {
-        
+        }) .then((response) => {
         console.log(response);
-        
-        })
-        
-        .catch(error=> {
-        
+        }, (error) => {
         console.log(error);
-        
         });
         
     
