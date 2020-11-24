@@ -21,7 +21,6 @@ const UploadDocument = () => {
 
   const preload = () => {
     getCategories().then(data => {
-      //console.log(data);
       if (data.error) {
         setValues({ ...values, error: data.error });
       } else {
@@ -53,7 +52,7 @@ const UploadDocument = () => {
       }
     })
     .catch(() => {
-      return console.log(error)})
+      return {error: true}})
   };
 
   const handleChange = name => event => {
