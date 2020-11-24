@@ -26,7 +26,7 @@ router.get("/patient/allDocuments/:patientId", isSignedIn, isAuthenticated, view
 
 // view all basic details of the patient by guest
 //router.get("/guest/patient/:upi", getPatientForGuest);
-router.post("/guest/patient/", getPatientForGuest);
+router.post("/guest/patient", getPatientForGuest);
 router.get("/guest/patientt/:upi", getPatientForGuestt);
 
 module.exports = router;
