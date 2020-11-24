@@ -5,7 +5,7 @@ import Base from './Base';
 
 export default function Home() {
     return (
-        <Base title="Welcome to Patient's Unique Identification" description="Stay Healthy">
+        <Base title="Welcome to Patient's Unique Identification" description="Stay Safe, Stay Healthy">
             <div className="card mb-4 px-5">
                 <h3 className="card-header text-center container mb-5">Coronavirus disease (COVID-19) advice for the public: When and how to use 
                 masks</h3>
