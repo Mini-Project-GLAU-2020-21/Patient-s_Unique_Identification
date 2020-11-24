@@ -15,16 +15,12 @@ const Menu = ({history}) => (
 
     <div  >
         <ul className="nav nav-tabs bg-info" >
-            <li className="nav-item" style={{fontSize:"25px"}}>
-                <Link style={currentTab(history, "/")} className="nav-link" to="/">
-                    Home 
-                </Link>
-            </li>
+            
           {!isAuthenticated() && (
             <Fragment>
-            <li className="nav-item" style={{fontSize:"25px"}}>
-                <Link style={currentTab(history, "/signup")} className="nav-link" to="/signup">
-                    Signup
+              <li className="nav-item" style={{fontSize:"25px"}}>
+                <Link style={currentTab(history, "/")} className="nav-link" to="/">
+                    Home 
                 </Link>
             </li>
             <li className="nav-item" style={{fontSize:"25px"}}>
@@ -32,10 +28,18 @@ const Menu = ({history}) => (
                     Signin
                 </Link>
             </li>
+            <li className="nav-item" style={{fontSize:"25px"}}>
+                <Link style={currentTab(history, "/signup")} className="nav-link" to="/signup">
+                    Signup
+                </Link>
+            </li>
             </Fragment>
           )}
             {isAuthenticated() && (
               <Fragment>
+                <li className="nav-item" style={{fontSize:"25px"}}>
+                  <Link style={currentTab(history, "/patient/dashboard")} to="/patient/dashboard" className="nav-link">Dashboard</Link>
+                </li>
                 <li className="nav-item" style={{fontSize:"25px"}}>
                   <Link style={currentTab(history, "/patient/myProfile")} to="/patient/myProfile" className="nav-link">My Profile</Link>
                 </li>
@@ -43,7 +47,7 @@ const Menu = ({history}) => (
                     <Link style={currentTab(history, "/patient/myDocuments")} to="/patient/myDocuments" className="nav-link">My Documents</Link>
                 </li>
                 <li className="nav-item" style={{fontSize:"25px"}}>
-                    <Link style={currentTab(history, "/patient/uploadDocuments")} to="/patient/uploadDocuments" className="nav-link">Upload Documents</Link>
+                    <Link style={currentTab(history, "/patient/uploadDocuments")} to="/patient/uploadDocuments" className="nav-link">Upload Document</Link>
                 </li>
                 <li className="nav-item" style={{fontSize:"25px"}}>
                   <Link className="nav-link text-white" onClick={() => { 
@@ -54,6 +58,11 @@ const Menu = ({history}) => (
                 </li>
               </Fragment>
           )}
+          <li className="nav-item" style={{fontSize:"25px"}}>
+                <Link style={currentTab(history, "/ContactUs")} className="nav-link" to="/ContactUs">
+                Contact Us
+                </Link>
+            </li>
         </ul>
       </div>
     );
