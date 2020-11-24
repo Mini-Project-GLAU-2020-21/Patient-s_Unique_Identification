@@ -12,7 +12,7 @@ import UploadDocument  from './patient/UploadDocument';
 import PatientDocuments from './patient/PatientDocuments';
 import PatientSearchByGuest from './core/PatientSearchByGuest';
 import EditProfile from './patient/EditProfile';
-
+import ContactUs from './core/ContactUs';
 
 
 const Routes = () => {
@@ -24,6 +24,7 @@ const Routes = () => {
                 <Route path="/signin" exact component={Signin} />
                 <Route path="/SignupSuccess" exact component={SignupSuccess} />
                 <Route path="/SignupFailed" exact component={SignupFailed} />
+                <Route path="/ContactUs" exact component={ContactUs} />
                 <Route path="/guest/patient" exact component={PatientSearchByGuest} />
                 <PrivateRoute path="/patient/dashboard" exact component={PatientDashboard} />
                 <PrivateRoute path="/patient/myProfile" exact component={PatientProfile} />
