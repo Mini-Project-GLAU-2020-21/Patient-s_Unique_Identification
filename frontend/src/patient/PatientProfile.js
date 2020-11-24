@@ -7,7 +7,7 @@ const PatientProfile = () => {
 
 
     const {
-        patient: {f_name, l_name, email, p_contact_number, r_contact_number, r_name, r_relation , address, blood_group, upi, dob , role}
+        patient: {f_name, l_name, email, p_contact_number, r_contact_number,gender, r_name, r_relation , address, blood_group, upi, dob , role}
     } = isAuthenticated();
 
 
@@ -36,11 +36,18 @@ const PatientProfile = () => {
                         <h4><span className="badge badge-info mr-4">
                             Blood Group:
                         </span>{blood_group}</h4>
-                    </li><li className="list-group-item">
+                    </li>
+                    <li className="list-group-item">
                         <h4><span className="badge badge-info mr-4">
                            Date of Birth :
                         </span>{dob}</h4>
-                    </li><li className="list-group-item">
+                    </li>
+                    <li className="list-group-item">
+                        <h4><span className="badge badge-info mr-4">
+                           Gender :
+                        </span>{gender}</h4>
+                    </li>
+                    <li className="list-group-item">
                         <h4><span className="badge badge-info mr-4">
                             Contact Number:
                         </span>{p_contact_number}</h4>
