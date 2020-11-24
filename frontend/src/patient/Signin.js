@@ -58,6 +58,9 @@ const Signin = () => {
             return <Redirect to="/" />
         }
     }
+    const onReset = () => {
+        document.getElementById("signinform").reset();
+    }
 
     const loadingMessage = () => {
         return (
@@ -89,25 +92,35 @@ const Signin = () => {
     const signInForm = () => {
         return(
             <div className="row">
-                <div className="col-md-6 offset-sm-3 text-left">
-                    <form>
+                <div className="col-md-5 offset-sm-4 text-left">
+                <div className="card">
+                        <div className="card-header bg-dark text-white text-center"><h1>Signin Form</h1></div>
+                    <div className="card-body ml-3 mr-3">
+                        
+                    <form id="signinform" autoComplete="off">
                         <div className="form-group">
-                            <label className="text-dark">Email</label>
+                            <h4><label className="text-dark">Email:</label></h4>
                             <input onChange={handleChange("email")} value={email} className="form-control" type="email"/>
-                        </div>
+                        </div><br/>
                         <div className="form-group">
-                            <label className="text-dark">Password</label>
+                        <h4><label className="text-dark">Password</label></h4>
                             <input onChange={handleChange("password")} value={password} className="form-control" type="password"/>
                         </div>
-                        <button onClick={onSubmit} className="btn btn-success btn-block">
-                            Submit
-                        </button>
-                        <p>
-                            <br/>
-                            <br/>
-                        </p>
+                        <br/>
+                        <div className="row">
+                            <div className="col-3">
+                                <button onClick={onReset} className="btn btn-danger btn-block"> Reset </button>
+                            </div>
+                            <div className="col-3"></div>
+                            <div className="col-3"></div>
+                            <div className="col-3">
+                                <button onClick={onSubmit} className="btn btn-success btn-block"> Submit </button>
+                            </div>
+                        </div>
                     </form>
                 </div>
+                </div>
+                        </div>
             </div>
         )
     }
