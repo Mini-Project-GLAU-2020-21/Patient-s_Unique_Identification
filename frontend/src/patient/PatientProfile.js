@@ -7,7 +7,7 @@ const PatientProfile = () => {
 
 
     const {
-        patient: {f_name, l_name, email, p_contact_number, r_contact_number,gender, r_name, r_relation , address, blood_group, upi, dob , role}
+        patient: {f_name, l_name, email, p_contact_number, r_contact_number,gender, r_name, r_relation , address, blood_group, upi, dob}
     } = isAuthenticated();
 
 
@@ -82,23 +82,12 @@ const PatientProfile = () => {
                             Relative Contact Number:
                         </span>{r_contact_number}</h4>
                     </li>
-                    {/*<li className="list-group-item">
-                        <span className="badge badge-danger">Patient Area</span>
-                    </li>*/}
                 </ul>
             </div>
         )
     }
     
     return(
-        /*<Base title="My Profile" description="" >
-            <p className="text-dark text-center"></p>
-            <div className="col-7 ">
-                {patientSide()}
-            </div>
-        </Base>*/
-
-
         <Base
         title="My Profile"
         description=""
