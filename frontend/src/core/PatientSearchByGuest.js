@@ -48,7 +48,7 @@ const PatientSearchByGuest = () => {
         
         //getPatientForGuest(upi)
         getPatientForGuest({upi: upi})
-        .then(({data}) => {
+        .then((data) => {
             const patient = data
             //console.log(patient)
             if(data.error) {
