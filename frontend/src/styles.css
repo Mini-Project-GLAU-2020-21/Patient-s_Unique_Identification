@@ -1,18 +1,27 @@
 .btn,
-.jumbotron,
-.nav :hover {
+.jumbotron :hover {
   border-radius: 0px;
 }
+
+.nav :hover {
+  border-radius: 10px;
+}
+
+
 
 body {
   background:
   #5bc0de;
 }
-/**
-footer {
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  left: 0px;
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-*/
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
