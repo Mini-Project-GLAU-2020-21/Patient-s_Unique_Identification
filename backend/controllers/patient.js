@@ -59,7 +59,7 @@ exports.getPatientForGuest = (req, res) => {
     //const error = validationResult(req);
     console.log("before dstrctr: ",req.body);
     const  upi  = req.body.upi;
-    console.log("ghjhg",upi);
+    //console.log("ghjhg",upi);
     //console.log("aftr dstrctr: ",upi)
     /*if(!error.isEmpty()){
         return res.status(422).json({
@@ -80,13 +80,20 @@ exports.getPatientForGuest = (req, res) => {
         //console.log("jhgfdsdfghjhgvcfgh", p)
         const {f_name, l_name, r_contact_number, r_name, r_relation , address, blood_group, upi, documents} = patient;
         console.log( {f_name, l_name, r_contact_number, r_name, r_relation , address, blood_group, upi, documents})
-        const p = JSON.stringify({ f_name: f_name, l_name: l_name, r_contact_number: r_contact_number, r_name: r_name, r_relation: r_relation , address: address,blood_group: blood_group, upi: upi, documents: documents});
-        console.log("ppppppp: ", p);
+        //const p = JSON.stringify({ f_name: f_name, l_name: l_name, r_contact_number: r_contact_number, r_name: r_name, r_relation: r_relation , address: address,blood_group: blood_group, upi: upi, documents: documents});
+        //console.log("ppppppp: ", p);
         //console.log(f_name)
         //console.log({ "f_name": f_name, "l_name": l_name, "r_contact_number": r_contact_number, "r_name": r_name, "r_relation": r_relation , "address": address,"blood_group": blood_group,"upi": upi,"documents": documents})
-        res.json( { "f_name": f_name, "l_name": l_name, "r_contact_number": r_contact_number, "r_name": r_name, "r_relation": r_relation , "address": address,"blood_group": blood_group,"upi": upi,"documents": documents})
-        
+        //return p
+        console.log("hgfdsdfggfd: ",patient)
+        //res.json({f_name: f_name, l_name: l_name, r_contact_number: r_contact_number, r_name: r_name, r_relation: r_relation , address: address,blood_group: blood_group, upi: upi})
+        return res.json(patient);
+        //console.log("typeof:  ", typeof(patient))
+        /*console.log("res.patient: ", res.json({
+            patient: patient
+        }))*/
     })
+    
     /*let patient = await Patient.findOne(upi, {
         _id:0,
         role:0,
