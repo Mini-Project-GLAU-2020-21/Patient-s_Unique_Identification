@@ -35,22 +35,6 @@ exports.getPatientByOwn = (req, res) => {
 
 
 
-
-exports.getPatientForGuestt = async (req, res, next, upi) => {
-    let patient = await Patient.findOne(req.body, {
-        _id:0,
-        role:0,
-        createdAt:0,
-        updatedAt:0,
-        encry_password:0,
-        email: 0,
-        salt:0
-    })
-    res.json(patient)
-    
-};
-
-
 //to return any patient's details for guest login
 exports.getPatientForGuest = (req, res) => {
     console.log("before dstrctr: ",req.body);
