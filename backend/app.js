@@ -29,7 +29,7 @@ mongoose.connect(process.env.DATABASE, {
 
 
 // middlewares
-app.use(bodyParser.json());             //use url encoded instead of bodyParser.json()....go and check dis on bodyParser site,How to use it.
+app.use(bodyParser.json());             
 app.use(cookieParser());
 app.use(cors());
 
@@ -43,7 +43,7 @@ app.use("/api", documentRoutes);
 
 
 // Port
-const port = process.env.PORT || 10000;
+const port = process.env.PORT || 11000;
 
 // starting server
 app.listen(port, () => {
