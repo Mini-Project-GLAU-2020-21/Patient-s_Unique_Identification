@@ -3,7 +3,7 @@ const router = express.Router();
 
 
 
-const { getPatientById, getPatientByOwn, getPatientForGuest, updatePatient, uploadDocument, viewAllDocuments, getPatientForGuestt } = require("../controllers/patient");  
+const { getPatientById, getPatientByOwn, getPatientForGuest, updatePatient, uploadDocument, viewAllDocuments} = require("../controllers/patient");  
 const { isSignedIn, isAdmin, isAuthenticated } = require("../controllers/auth");
 
 // params
@@ -25,8 +25,6 @@ router.put("/patient/uploadDocument/:patientId", isSignedIn, isAuthenticated, up
 router.get("/patient/allDocuments/:patientId", isSignedIn, isAuthenticated, viewAllDocuments);
 
 // view all basic details of the patient by guest
-//router.get("/guest/patient/:upi", getPatientForGuest);
 router.post("/guest/patient", getPatientForGuest);
-router.get("/guest/patientt/:upi", getPatientForGuestt);
 
 module.exports = router;
