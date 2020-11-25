@@ -4,10 +4,6 @@ const uuidv1 = require("uuid/v1");
 
 
 var patientSchema = new mongoose.Schema({
-    profile_photo:{
-      data: Buffer,
-      contentType: String
-    },
     f_name: {
       type: String,
       required: true,
@@ -28,38 +24,42 @@ var patientSchema = new mongoose.Schema({
     },
     dob: {
       type: Date,
-      //required: true,
+      required: true,
       max: Date.now 
     },
     p_contact_number: {
       type: String,
       maxlength:10,
-      unique: true,
-      index: true,
       trim: true
     },
     r_name: {
       type: String,
-      trim: true
+      trim: true,
+      required: true
     },
     r_contact_number: {
       type: String,
       maxlength:10,
+      required: true,
       trim: true
     },
     r_relation: {
       type: String,
+      required: true,
       trim: true
     },
     address: {
-      type: String
+      type: String,
+      required: true
     },
     blood_group: {
       type: String,
-      maxlength: 2
+      required: true,
+      maxlength: 3
     },
     gender: {
-      type: String
+      type: String,
+      required: true
     },
     upi: {
       type: String
