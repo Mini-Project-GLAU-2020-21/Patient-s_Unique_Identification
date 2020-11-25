@@ -15,7 +15,7 @@ router.param("documentId", getDocumentById);
 
 // actual routes
 router.get("/patient/document/:documentId", document_file);
-//router.get("/")
+
 
 
 module.exports = router;
