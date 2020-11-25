@@ -5,7 +5,7 @@ import Base from './Base';
 
 export default function Home() {
     return (
-        <Base title="Welcome to Patient's Unique Identification" description="Stay Safe, Stay Healthy">
+        <Base src1="./logo.png" title="Welcome to Patient's Unique Identification" description="Stay Safe, Stay Healthy">
             <div className="card mb-4 px-5">
                 <h3 className="card-header text-center container mb-5">Coronavirus disease (COVID-19) advice for the public: When and how to use 
                 masks</h3>
@@ -40,43 +40,43 @@ export default function Home() {
 <p>For health workers, medical masks are essential personal protective equipment when engaging with patients with suspected, probable or confirmed COVID-19. Respirator masks (such as FFP2, FFP3, N95, N99) should be used in settings where procedures generating aerosols are performed and must be fitted to ensure the right size is worn.
             </p><br /><br />
             <p>
-                <table cellPadding="25px" className="text-center">
+                <table cellPadding="25px"  className=" text-center ml-5">
                     <tr>
                         <td>
-                            <h3>WHO’s recommended fabric mask materials</h3>
+                            <h4>WHO’s recommended fabric mask materials</h4>
                         </td>
                         
                         <td>
-                            <h3>Medical and fabric masks: who wears what mask when?</h3>
+                            <h4>Medical and fabric masks: who wears what mask when?</h4>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/iYE0A-5wd14" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe  src="https://www.youtube.com/embed/iYE0A-5wd14" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </td>
                         
                         <td>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/esM_ePHn0aw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/esM_ePHn0aw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                         </td>
                     </tr>
                     <br /><br />
                     <tr>
                         <td>
-                            <h3>How to wear a fabric mask</h3>
+                            <h4>How to wear a fabric mask</h4>
                         </td>
                         
                         <td>
-                            <h3>How to wear a medical mask?</h3>
+                            <h4>How to wear a medical mask?</h4>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ciUniZGD4tY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe  src="https://www.youtube.com/embed/ciUniZGD4tY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </td>
                         
                         <td>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/adB8RW4I3o4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe  src="https://www.youtube.com/embed/adB8RW4I3o4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                         </td>
                     </tr>

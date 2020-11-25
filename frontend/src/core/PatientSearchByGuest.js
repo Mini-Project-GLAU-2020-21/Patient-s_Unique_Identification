@@ -89,10 +89,10 @@ const PatientSearchByGuest = () => {
         };
     
     return(
-        <Base title="Search Patient" description="" className="container  p-5">
+        <Base src1="../logo.png" title="Search Patient" description="Search for a patient" className="container  p-5">
             <div className="row bg-light text-dark rounded">
                 <div className="col-md-10 offset-md-1 px-5 py-5">
-                <h2 className="text-left">Search for Patient using UPI :</h2><br/><br/>
+                <h2 className="text-left">Patient's UPI :</h2><br/><br/>
                     {upiSearchForm()}
                 </div>
             </div><br/><br/>

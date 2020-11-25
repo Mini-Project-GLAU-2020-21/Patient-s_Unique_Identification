@@ -36,6 +36,7 @@ const ContactUs = () => {
     
     return(
         <Base
+        src1="./logo.png"
         title="How can you reach us ?"
         description=""
         className="container  p-5"

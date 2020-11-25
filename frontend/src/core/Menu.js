@@ -33,9 +33,42 @@ const Menu = ({history}) => (
                     Signup
                 </Link>
             </li>
+            <li className="nav-item" style={{fontSize:"25px"}}>
+                <Link style={currentTab(history, "/guest/patient")} className="nav-link" to="/guest/patient">
+                    Search using UPI
+                </Link>
+            </li>
             </Fragment>
           )}
-            {isAuthenticated() && (
+           {isAuthenticated() && isAuthenticated().patient.role === 1 && (
+             <Fragment>
+               <li className="nav-item" style={{fontSize:"25px"}}>
+                <Link style={currentTab(history, "/")} className="nav-link" to="/">
+                    Home 
+                </Link>
+            </li>
+               <li className="nav-item" style={{fontSize:"25px"}}>
+                <Link style={currentTab(history, "/admin/dashboard")} className="nav-link" to="/admin/dashboard">
+                    Admin Dashboard
+                </Link>
+            </li>
+            <li className="nav-item" style={{fontSize:"25px"}}>
+                <Link style={currentTab(history, "/admin/create/category")} className="nav-link" to="/admin/create/category">
+                Create Category
+                </Link>
+            </li>
+            <li className="nav-item" style={{fontSize:"25px"}}>
+                  <Link className="nav-link text-white" onClick={() => { 
+                    signout(() => { history.push("/"); });
+                    }} to="/">
+                    Signout
+                  </Link>
+                </li>
+            
+             </Fragment>
+                
+            )}
+            {isAuthenticated() && isAuthenticated().patient.role === 0 && (
               <Fragment>
                 <li className="nav-item" style={{fontSize:"25px"}}>
                   <Link style={currentTab(history, "/patient/dashboard")} to="/patient/dashboard" className="nav-link">Dashboard</Link>
@@ -56,13 +89,15 @@ const Menu = ({history}) => (
                     Signout
                   </Link>
                 </li>
+                <li className="nav-item" style={{fontSize:"25px"}}>
+            <Link style={currentTab(history, "/ContactUs")} className="nav-link" to="/ContactUs">
+              Contact Us
+            </Link>
+          </li>
               </Fragment>
           )}
-          <li className="nav-item" style={{fontSize:"25px"}}>
-                <Link style={currentTab(history, "/ContactUs")} className="nav-link" to="/ContactUs">
-                Contact Us
-                </Link>
-            </li>
+         
+          
         </ul>
       </div>
     );

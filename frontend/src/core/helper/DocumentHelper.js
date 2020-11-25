@@ -1,7 +1,7 @@
 import React from "react";
 import { API } from "../../backend";
 
-const DocumentHelper = (document) => {
+const DocumentHelper = ({document}) => {
   const imageurl=`https://prod.wp.cdn.aws.wfu.edu/sites/93/2020/02/document-icon.png`
   const docurl = document
     ? `${API}/patient/document/${document._id}`
