@@ -82,41 +82,9 @@ const UpdatePatient = () => {
 
   const updatePatientForm = () => (
     <form>
-      {/*<div className="form-group">UPI: 
-        <input className="form-control" value={upi} readOnly="readOnly" />
-      </div>
-      <div className="form-group">First Name:
-        <input className="form-control" value={f_name} readOnly="readOnly"/>
-      </div>
-      
-      <div className="form-group">Last Name:
-        <input className="form-control" placeholder="Last Name" value={l_name} readOnly="readOnly"/>
-      </div>
-      
-      <div className="form-group">Date of Birth:
-        <input className="form-control" value={dob} readOnly="readOnly" />
-      </div>
-      
-      <div className="form-group">Email:
-        <input className="form-control" value={email} readOnly="readOnly"/>
-      </div>
-
-      <div className="form-group">Blood Group:
-        <input className="form-control" value={blood_group} readOnly="readOnly" />
-      </div>
-      
-
-      <div className="form-group">Contact Number:
-        <input onChange={handleChange("p_contact_number")} className="form-control" value={p_contact_number}ty/>
-      </div>
       
       
-      
-      <div className="form-group">Address:
-        <input onChange={handleChange("address")} className="form-control" placeholder="Address" value={address} type="text" placeholder="Your permanent address." />
-      </div>*/}
-      
-      <h4>Emergency Contact: </h4>
+      <h4>Emergency Contact: </h4><br />
                         <div className="row">
                             <div className="col-4">
                                 <div className="form-group">
@@ -150,9 +118,9 @@ const UpdatePatient = () => {
     </form>
   );
   return (
-    <Base title="Update your profile here" description="Enter your details" className="container  p-5">
+    <Base src1="../logo.png" title="Update your profile here" description="Enter your details" className="container  p-5">
       <div className="row bg-light text-dark rounded">
-        <div className="col-md-10 offset-md-1 px-5 py-5">
+        <div className="col-md-10 offset-md-1 px-5 py-3">
           {successMessage()}
           {errorMessage()}
           {updatePatientForm()}

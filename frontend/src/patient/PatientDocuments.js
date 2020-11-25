@@ -16,7 +16,6 @@ const PatientDocuments = () => {
         .then(data => {
             if(data.error) {
                 setError(data.error);
-                //console.log(error)
             } else {
                 setDocuments(data);
             }
@@ -37,7 +36,7 @@ const PatientDocuments = () => {
                 
               </div>
             </div>
-            <br /><br /><br /><br />
+            
           </div>
         );
       };
@@ -48,7 +47,7 @@ const PatientDocuments = () => {
     }, [])
     
     return (
-        <Base title="Your Documents" description="">
+        <Base src1="../logo.png" title="Your Documents" description="">
             <div className="row text-center">
                 <h1 className="text-white"></h1>  
                 <div className="row">

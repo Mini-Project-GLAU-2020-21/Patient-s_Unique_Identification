@@ -139,7 +139,7 @@ const UploadDocument = () => {
             placeholder="choose a file"
           />
         </label>
-      </div><br />
+      </div><p>Max. Size of file should be below 2.5 MB </p>
 
         <div className="text-right">
             <button type="submit" onClick={onSubmit} className="btn btn-outline-success mb-3">
@@ -151,6 +151,7 @@ const UploadDocument = () => {
 
   return (
     <Base
+    src1="../logo.png"
       title="Document upload section"
       description="You can upload your documents here"
       className="container  p-5"

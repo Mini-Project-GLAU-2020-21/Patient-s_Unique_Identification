@@ -7,7 +7,7 @@ const PatientProfile = () => {
 
 
     const {
-        patient: {f_name, l_name, email, p_contact_number, r_contact_number,gender, r_name, r_relation , address, blood_group, upi, dob}
+        patient: {f_name, l_name, email, p_contact_number, r_contact_number, gender, r_name, r_relation , address, blood_group, upi, dob}
     } = isAuthenticated();
 
 
@@ -89,6 +89,7 @@ const PatientProfile = () => {
     
     return(
         <Base
+        src1="../logo.png"
         title="My Profile"
         description=""
         className="container  p-5"

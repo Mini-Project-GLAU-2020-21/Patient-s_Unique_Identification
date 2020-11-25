@@ -3,7 +3,7 @@ import Base from "../core/Base";
 
 const PatientDashboard = () => {
     return(
-        <Base title="Welcome to Patient's Unique Identification" description="Stay Healthy, Stay Safe">
+        <Base src1="../logo.png" title="Welcome to Patient's Unique Identification" description="Stay Healthy, Stay Safe">
             <div className="card mb-4 px-5">
                 <h3 className="card-header text-center container mb-5">Coronavirus disease (COVID-19) advice for the public: When and how to use 
                 masks</h3>

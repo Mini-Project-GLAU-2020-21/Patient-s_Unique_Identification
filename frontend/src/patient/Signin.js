@@ -7,8 +7,8 @@ import {signin, authenticate, isAuthenticated} from "../auth/helper"
 const Signin = () => {
 
     const [values, setValues] = useState({
-        email: "abhinav@yahoo.com",
-        password: "12345",
+        email: "",
+        password: "",
         error: "",
         loading: false,
         didRedirect: false
@@ -44,13 +44,13 @@ const Signin = () => {
 
     const performRedirect = () => {
 
-        //TODO: do a redirect here
+ 
         if(didRedirect){
             if(didRedirect){
                 if(patient && patient.role === 0){
                     return <Redirect to="/patient/dashboard" />
                 } else {
-                    return <p>redirect to admin dashboard</p>
+                    return <Redirect to="/admin/dashboard" />;
                 }
             }
         }
@@ -92,7 +92,7 @@ const Signin = () => {
     const signInForm = () => {
         return(
             <div className="row">
-                <div className="col-md-5 offset-sm-4 text-left">
+                <div className="col-md-6 offset-sm-3 text-left">
                 <div className="card">
                         <div className="card-header bg-dark text-white text-center"><h1>Signin Form</h1></div>
                     <div className="card-body ml-3 mr-3">
@@ -100,11 +100,11 @@ const Signin = () => {
                     <form id="signinform" autoComplete="off">
                         <div className="form-group">
                             <h4><label className="text-dark">Email:</label></h4>
-                            <input onChange={handleChange("email")} value={email} className="form-control" type="email"/>
+                            <input onChange={handleChange("email")} placeholder="Enter you email" value={email} className="form-control" type="email"/>
                         </div><br/>
                         <div className="form-group">
                         <h4><label className="text-dark">Password</label></h4>
-                            <input onChange={handleChange("password")} value={password} className="form-control" type="password"/>
+                            <input onChange={handleChange("password")} value={password} placeholder="Enter your password" className="form-control" type="password"/>
                         </div>
                         <br/>
                         <div className="row">
@@ -126,7 +126,7 @@ const Signin = () => {
     }
 
     return(
-        <Base title="Sign In to your Account" description="Continue to PUI" >
+        <Base src1="../logo.png" title="Sign In to your Account" description="Continue to PUI" >
         {loadingMessage()}
         {errorMessage()}
         {signInForm()}
