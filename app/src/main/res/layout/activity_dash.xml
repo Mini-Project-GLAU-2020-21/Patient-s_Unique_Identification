@@ -105,7 +105,7 @@
                                 <Button
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/Prfile"
+                                    android:id="@+id/uploadfile"
                                     android:background="@android:color/transparent"
                                     android:onClick="btn_Profile"
                                     tools:ignore="DuplicateIds">
@@ -159,10 +159,12 @@
                                 </TextView>
 
                                 <Button
+
+                                    android:id="@+id/btn_view"
+                                    android:onClick="btn_view"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:id="@+id/Profile"
-                                    android:onClick="btn_records"
+
                                     android:background="@android:color/transparent"
                                     >
                                 </Button>

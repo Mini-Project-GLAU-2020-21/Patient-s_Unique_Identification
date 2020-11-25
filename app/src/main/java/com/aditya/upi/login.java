@@ -1,10 +1,12 @@
 package com.aditya.upi;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -13,76 +15,81 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.Objects;
 
 public class login extends AppCompatActivity {
-    private Button login;
+     Button btn_login;
 
-    private EditText emailid,password;
-    private TextView signupp;
-    @SuppressLint("WrongViewCast")
+     EditText txtEmail,txtPassword;
+     TextView btn_signup;
+
+     private FirebaseAuth firebaseAuth;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+   protected void onCreate(Bundle savedInstanceState) {
+       super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getvalue();
-        Objects.requireNonNull(getSupportActionBar()).hide();
-        login.setOnClickListener(new View.OnClickListener() {
+
+        txtEmail = (EditText) findViewById(R.id.email);
+        txtPassword = (EditText) findViewById(R.id.pass);
+        btn_login = (Button) findViewById(R.id.btnsign);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String email =txtEmail.getText().toString().trim();
+                String password = txtPassword.getText().toString().trim();
 
 
-                if(Validate()) {
-                    Log.i("Email ID", emailid.getText().toString());
-                    Log.i("Password",password.getText().toString());
-
-                    opendashboard();
+                if (TextUtils.isEmpty(email))
+                {
+                    Toast.makeText(login.this, "Please Enter Email", Toast.LENGTH_SHORT).show();
                 }
+
+                if (TextUtils.isEmpty(password))
+                {
+                    Toast.makeText(login.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
+                }
+                if (password.length()<6)
+                {
+                    Toast.makeText(login.this, "Please Enter Password", Toast.LENGTH_SHORT).show();
+                }
+
+                firebaseAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(login.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful())
+                                {
+                                startActivity(new Intent(getApplicationContext(),Dash.class));
+                                }
+                                else
+                                    {
+                                        Toast.makeText(login.this, "Account not Found", Toast.LENGTH_SHORT).show();
+                                }
+
+                                // ...
+                            }
+                        });
+
             }
         });
-
-        signupp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                opensignup();
-            }
-        });
     }
 
-    public void getvalue(){
-        login=(Button)findViewById(R.id.btnsign);
+    public void btn_signupForm(View view) {
 
-        emailid=(EditText)findViewById(R.id.email);
-        password=(EditText)findViewById(R.id.pass);
-        signupp=(TextView)findViewById(R.id.editsignupp);
-    }
-    public void opendashboard(){
-        Intent intent=new Intent(this,Dash.class);
-        startActivity(intent);
-    }
-    public void opensignup(){
-        Intent intent=new Intent(this,Register.class);
-        startActivity(intent);
-    }
-    private Boolean Validate(){
-        Boolean result =false;
-        String email=emailid.getText().toString();
-        String passwor=password.getText().toString();
-        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-
-        if(email.isEmpty() || passwor.isEmpty()){
-            Toast.makeText(this,"Please enter valid detail or signup",Toast.LENGTH_SHORT).show();
-        }else if (emailid.getText().toString().trim().matches(emailPattern)) {
-            Toast.makeText(getApplicationContext(),"valid email address",Toast.LENGTH_SHORT).show();
-            result=true;
-        }
-        else {
-            Toast.makeText(getApplicationContext(),"Invalid email address", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        return result;
+        startActivity(new Intent(getApplicationContext(),Register.class));
     }
 
+    public void btn_geaust(View view) {
+        startActivity(new Intent(getApplicationContext(),GeaustLogin.class));
+    }
 }
 
 

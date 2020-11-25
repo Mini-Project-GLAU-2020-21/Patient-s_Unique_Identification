@@ -28,7 +28,7 @@ public class Dash extends AppCompatActivity {
 
     public void btn_upload(View view)
     {
-        startActivity(new Intent(getApplicationContext(),Upload.java.class));
+        startActivity(new Intent(getApplicationContext(),upload.class));
     }
 
     public void btn_records(View view)
@@ -39,6 +39,10 @@ public class Dash extends AppCompatActivity {
     public void btn_todo(View view)
     {
         startActivity(new Intent(getApplicationContext(),Todo.class));
+    }
+
+    public void btn_view(View view) {
+        startActivity(new Intent(getApplicationContext(),ViewReport.class));
     }
 }
 

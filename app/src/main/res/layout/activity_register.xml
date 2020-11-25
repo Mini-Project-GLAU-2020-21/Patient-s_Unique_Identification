@@ -57,6 +57,7 @@
         android:textColorHint="@color/cardview_light_background">
 
         <EditText
+            android:id="@+id/EditEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -75,6 +76,7 @@
         android:textColorHint="@color/cardview_light_background">
 
         <EditText
+            android:id="@+id/Password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -93,6 +95,7 @@
         android:textColorHint="@color/cardview_light_background">
 
         <EditText
+            android:id="@+id/CPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -133,6 +136,7 @@
     </RadioGroup>
 
     <Button
+        android:id="@+id/btn_Register"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="Register"
@@ -140,5 +144,12 @@
         android:background="@drawable/button_shape"
         android:layout_marginTop="15dp"
         android:onClick="btn_signinForm"/>
-    />
+
+    <ProgressBar
+        android:id="@+id/Progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"/>
 </LinearLayout>

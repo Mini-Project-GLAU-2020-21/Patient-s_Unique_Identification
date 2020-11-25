@@ -1,68 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Upload">
-
-    <TextView
-        android:id="@+id/notify"
-        android:layout_width="400dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginRight="14dp"
-        android:background="#40C4FF"
-        android:text="notify"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/uploadfile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.032" />
-
-    <Button
-        android:id="@+id/uploadfile"
-        android:layout_width="400dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginRight="14dp"
-        android:layout_marginBottom="130dp"
-        android:text="upload"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/selectfile"
-        android:layout_width="400dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginRight="14dp"
-        android:layout_marginBottom="118dp"
-        android:text="selectfile"
-        app:layout_constraintBottom_toTopOf="@+id/notify"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+    android:padding="30dp"
+    android:background="@drawable/ba"
+    android:orientation="vertical"
+    tools:context=".upload">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/log"
+        android:layout_gravity="center">
+            </ImageView>
+
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="centerInside"
-        android:visibility="visible"
-        app:srcCompat="@drawable/back"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="FIREBASE "
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/aclonica"
+        android:layout_marginTop="10dp"
+        ></TextView>
+<EditText
+    android:id="@+id/txt_pdf"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="50dp"
+    android:textColorHint="@color/cardview_light_background"
+    android:hint="Enter the PDF name"
+    android:textSize="22dp"/>
+
+    <Button
+        android:id="@+id/btn_upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_shape"
+        android:text="UPLOAD Report"
+        android:textSize="25sp"/>
+
+</LinearLayout>

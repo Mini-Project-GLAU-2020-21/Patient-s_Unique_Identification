@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 
 import java.util.Objects;
 
@@ -24,4 +25,9 @@ public class MainActivity extends AppCompatActivity {
             }
         },SPLASH_TIME_OUT);
     }
-}
+
+    public void btn_logout(View view) {
+
+            startActivity(new Intent(getApplicationContext(),login.class));
+        }
+    }
