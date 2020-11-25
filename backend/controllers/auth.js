@@ -17,7 +17,7 @@ exports.signup = (req, res) => {
         });
     };
 
-   // req.body.upi=upiGenerator();
+   
     const patient = new Patient(req.body)
     patient.save((err, patient) => {
         if(err || !patient){
@@ -65,10 +65,10 @@ exports.signin = (req, res) => {
 
         //send response on frontend
         const {_id, f_name, l_name, email, p_contact_number, r_contact_number, 
-                r_name, r_relation , address, blood_group, upi, dob , role} = patient;
+                r_name, r_relation , address, blood_group, upi, gender, dob , role} = patient;
                 
         return res.json({ token, patient: {_id, f_name, l_name, email, p_contact_number,
-             r_contact_number, r_name, r_relation , address, blood_group, upi, dob , role}})
+             r_contact_number, r_name, r_relation , address, blood_group, gender, upi, dob , role}})
     })
 
 }
@@ -88,7 +88,6 @@ exports.signout = (req, res) => {
 
 
 //protected routes
-
 
 
 exports.isSignedIn = expressJwt({
